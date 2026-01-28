@@ -11,6 +11,7 @@
 #include "text/JsonHelper.h"
 #include "text/JavaScriptHelper.h"
 #include "text/TimeStampHelper.h"  // 添加这一行
+#include "text/TextHelper.h"        // 添加这一行
 #include "decrypt/Base64Helper.h"
 #include "decrypt/Md5Helper.h"
 #include "decrypt/ShaHelper.h"
@@ -34,6 +35,7 @@ HelperBase* CreateHelperForTool(const wxString& toolName) {
     if (toolName == wxString::FromUTF8("JSON 格式化")) return new JsonHelper();
     if (toolName == wxString::FromUTF8("JavaScript 处理")) return new JavaScriptHelper();
     if (toolName == wxString::FromUTF8("时间戳处理")) return new TimeStampHelper();  // 添加这一行
+    if (toolName == wxString::FromUTF8("文字处理")) return new TextHelper();          // 添加这一行
     if (toolName == wxString::FromUTF8("MD5")) return new Md5Helper();
     if (toolName == wxString::FromUTF8("Base64")) return new Base64Helper();
     if (toolName == wxString::FromUTF8("SHA")) return new ShaHelper();
@@ -125,7 +127,8 @@ MainFrame::MainFrame()
 
     // 两个分类
     createCategory(wxString::FromUTF8("文本处理"),
-                   { wxString::FromUTF8("HTML 处理"),
+                   { wxString::FromUTF8("文字处理"),
+                     wxString::FromUTF8("HTML 处理"),
                      wxString::FromUTF8("CSS 处理"),
                      wxString::FromUTF8("JSON 格式化"),
                      wxString::FromUTF8("JavaScript 处理"),
