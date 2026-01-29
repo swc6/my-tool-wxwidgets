@@ -14,4 +14,5 @@ private:
     // 简单 JSON 格式化（非严格解析，仅做友好缩进）
     static std::string PrettyPrintJson(const std::string& s);
     static std::string MinifyJson(const std::string& s);
+    static std::string ExtractFormat(const std::string& s);
 };
